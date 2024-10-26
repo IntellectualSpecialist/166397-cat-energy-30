@@ -1,21 +1,21 @@
-const TILE_LAYER = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-const COPYRIGHT = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-const ZOOM = 17;
-const objectCoordinate = {
-  lat: 59.938827,
-  lng: 30.323080,
-};
-const startCoordinate = {
-  lat: 59.938827,
-  lng: 30.320580,
-};
-const iconConfig = {
-  url: './images/map-pin-tablet.png',
-  width: 113,
-  height: 106,
-  anchorX: 56.5,
-  anchorY: 53,
-};
+// const TILE_LAYER = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+// const COPYRIGHT = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+// const ZOOM = 17;
+// const objectCoordinate = {
+//   lat: 59.938827,
+//   lng: 30.323080,
+// };
+// const startCoordinate = {
+//   lat: 59.938827,
+//   lng: 30.320580,
+// };
+// const iconConfig = {
+//   url: './images/map-pin-tablet.png',
+//   width: 113,
+//   height: 106,
+//   anchorX: 56.5,
+//   anchorY: 53,
+// };
 
 const siteList = document.querySelector('.main-nav__list');
 const navBurger = document.querySelector('.main-nav__burger');
