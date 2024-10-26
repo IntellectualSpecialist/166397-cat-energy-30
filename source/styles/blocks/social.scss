@@ -21,7 +21,7 @@
   color: $sextuple-bg-color;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     color: $primary-bg-color;
   }
 

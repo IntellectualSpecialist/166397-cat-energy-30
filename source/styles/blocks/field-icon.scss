@@ -19,11 +19,11 @@
     padding-right: 35px;
   }
 
-  input:focus ~ .field-icon__icon {
+  input:focus-visible ~ .field-icon__icon {
     background-color: $primary-bg-color;
   }
 
-  input:focus:invalid ~ .field-icon__icon {
+  input:user-invalid ~ .field-icon__icon {
     background-color: $error-color;
   }
 

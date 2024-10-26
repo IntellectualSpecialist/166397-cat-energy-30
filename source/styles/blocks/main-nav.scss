@@ -27,7 +27,7 @@
 
   &:not(.main-nav__logo--index) {
     &:hover,
-    &:focus {
+    &:focus-visible {
       opacity: 0.8;
     }
 
@@ -99,7 +99,7 @@
   cursor: pointer;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     .main-nav__burger-icon {
       &::before {
         transform: translateY(-4px);
@@ -134,7 +134,7 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     .main-nav__burger-icon {
       transform: rotate(45deg);
       opacity: 0.6;

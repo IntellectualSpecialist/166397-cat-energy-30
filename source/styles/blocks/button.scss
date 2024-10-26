@@ -28,7 +28,7 @@
     background-color: $primary-bg-color;
 
     &:hover,
-    &:focus {
+    &:focus-visible {
       background-color: #5eaa2f;
     }
 
@@ -43,7 +43,7 @@
     background-color: $secondary-bg-color;
 
     &:hover,
-    &:focus,
+    &:focus-visible,
     &:active {
       background-color: $octonary-bg-color;
     }

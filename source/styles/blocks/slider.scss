@@ -1,7 +1,7 @@
 .slider {
   position: relative;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: var(--persent) 1fr;
   width: 280px;
   height: 256px;
 
@@ -16,12 +16,7 @@
 }
 
 .slider__left {
-  width: 138px;
   overflow: hidden;
-
-  @media (min-width: $tablet-width) {
-    width: 279px;
-  }
 }
 
 .slider__right {
@@ -32,7 +27,7 @@
 
 .slider__control {
   position: absolute;
-  left: 50%;
+  left: var(--left);
   top: 50%;
   width: 40px;
   height: 40px;
@@ -60,7 +55,7 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     &::before {
       background-color: $primary-bg-color;
     }

@@ -27,7 +27,7 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     &::after {
       background-position: center left;
     }

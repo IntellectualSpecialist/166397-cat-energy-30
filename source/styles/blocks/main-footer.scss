@@ -54,7 +54,7 @@
   text-decoration: none;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     .main-footer__academy-logo {
       color: $primary-bg-color;
     }

@@ -2,7 +2,7 @@
   color: $fourth-color-text;
 
   &:not(.logo-text--index):hover,
-  &:not(.logo-text--index):focus {
+  &:not(.logo-text--index):focus-visible {
     color: #3e3e3e;
   }
 
