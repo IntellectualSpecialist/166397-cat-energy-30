@@ -6,9 +6,10 @@
     background-color: $base-color;
   }
 
-  iframe,
-  .contacts__map-frame {
-    z-index: 1;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 362px;
     border: none;
@@ -36,7 +37,7 @@
 
   @media (min-width: $desktop-width) {
     position: absolute;
-    z-index: 401;
+    z-index: 1;
     left: 110px;
     top: 96px;
     width: 565px;
@@ -78,18 +79,8 @@
 }
 
 .contacts__picture {
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 362px;
-  border: none;
-
-  @media (min-width: $tablet-width) {
-    height: 400px;
-  }
 
   .contacts__map-image {
     display: block;

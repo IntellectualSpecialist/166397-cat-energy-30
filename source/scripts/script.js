@@ -26,22 +26,22 @@ let sliderStyles;
 let controlPlaceStart;
 let clientX;
 
-const map = L.map('map').setView(startCoordinate, ZOOM);
-L.tileLayer(TILE_LAYER, {
-  attribution: COPYRIGHT
-}).addTo(map);
+// const map = L.map('map').setView(startCoordinate, ZOOM);
+// L.tileLayer(TILE_LAYER, {
+//   attribution: COPYRIGHT
+// }).addTo(map);
 
-const mainPinIcon = L.icon({
-  iconUrl: iconConfig.url,
-  iconSize: [iconConfig.width, iconConfig.height],
-  iconAnchor: [iconConfig.anchorX, iconConfig.anchorY],
-});
+// const mainPinIcon = L.icon({
+//   iconUrl: iconConfig.url,
+//   iconSize: [iconConfig.width, iconConfig.height],
+//   iconAnchor: [iconConfig.anchorX, iconConfig.anchorY],
+// });
 
-const mainPinMarker = L.marker(objectCoordinate, {
-  icon: mainPinIcon,
-});
+// const mainPinMarker = L.marker(objectCoordinate, {
+//   icon: mainPinIcon,
+// });
 
-mainPinMarker.addTo(map);
+// mainPinMarker.addTo(map);
 
 siteList.classList.add('main-nav__list--closed');
 navBurger.classList.remove('main-nav__burger--active');
