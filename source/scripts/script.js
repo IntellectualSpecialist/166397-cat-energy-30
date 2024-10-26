@@ -1,3 +1,22 @@
+const TILE_LAYER = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+const COPYRIGHT = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+const ZOOM = 17;
+const objectCoordinate = {
+  lat: 59.938827,
+  lng: 30.323080,
+};
+const startCoordinate = {
+  lat: 59.938827,
+  lng: 30.320580,
+};
+const iconConfig = {
+  url: './images/map-pin-tablet.png',
+  width: 113,
+  height: 106,
+  anchorX: 56.5,
+  anchorY: 53,
+};
+
 const siteList = document.querySelector('.main-nav__list');
 const navBurger = document.querySelector('.main-nav__burger');
 const navMain = document.querySelector('.main-nav');
@@ -6,6 +25,23 @@ let control;
 let sliderStyles;
 let controlPlaceStart;
 let clientX;
+
+const map = L.map('map').setView(startCoordinate, ZOOM);
+L.tileLayer(TILE_LAYER, {
+  attribution: COPYRIGHT
+}).addTo(map);
+
+const mainPinIcon = L.icon({
+  iconUrl: iconConfig.url,
+  iconSize: [iconConfig.width, iconConfig.height],
+  iconAnchor: [iconConfig.anchorX, iconConfig.anchorY],
+});
+
+const mainPinMarker = L.marker(objectCoordinate, {
+  icon: mainPinIcon,
+});
+
+mainPinMarker.addTo(map);
 
 siteList.classList.add('main-nav__list--closed');
 navBurger.classList.remove('main-nav__burger--active');
@@ -30,6 +66,8 @@ function initSlider () {
   if (slider) {
     window.addEventListener('pointerup', stopTheControlShifting);
     control.addEventListener('pointerdown', startTheControlShifting);
+    window.addEventListener('touchend', stopTheControlShifting);
+    control.addEventListener('touchstart', startTheControlShifting);
   }
 }
 
