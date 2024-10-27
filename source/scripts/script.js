@@ -1,21 +1,39 @@
-// const TILE_LAYER = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-// const COPYRIGHT = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-// const ZOOM = 17;
-// const objectCoordinate = {
-//   lat: 59.938827,
-//   lng: 30.323080,
-// };
-// const startCoordinate = {
-//   lat: 59.938827,
-//   lng: 30.320580,
-// };
-// const iconConfig = {
-//   url: './images/map-pin-tablet.png',
-//   width: 113,
-//   height: 106,
-//   anchorX: 56.5,
-//   anchorY: 53,
-// };
+/* global L */
+const TILE_LAYER = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+const COPYRIGHT = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+let ZOOM = 17;
+const objectCoordinate = {
+  lat: 59.938827,
+  lng: 30.323080,
+};
+let startCoordinate = {
+  lat: 59.938827,
+  lng: 30.320580,
+};
+let iconConfig = {
+  url: './images/map-pin-tablet@2x.png',
+  width: 113,
+  height: 106,
+  anchorX: 56.5,
+  anchorY: 100,
+};
+
+if (window.innerWidth < 768) {
+  startCoordinate = {
+    lat: 59.938827,
+    lng: 30.323080,
+  };
+
+  ZOOM = 14;
+
+  iconConfig = {
+    url: './images/map-pin-mobile@2x.png',
+    width: 57,
+    height: 53,
+    anchorX: 28.5,
+    anchorY: 50,
+  };
+}
 
 const siteList = document.querySelector('.main-nav__list');
 const navBurger = document.querySelector('.main-nav__burger');
@@ -26,22 +44,22 @@ let sliderStyles;
 let controlPlaceStart;
 let clientX;
 
-// const map = L.map('map').setView(startCoordinate, ZOOM);
-// L.tileLayer(TILE_LAYER, {
-//   attribution: COPYRIGHT
-// }).addTo(map);
+const map = L.map('map').setView(startCoordinate, ZOOM);
+L.tileLayer(TILE_LAYER, {
+  attribution: COPYRIGHT
+}).addTo(map);
 
-// const mainPinIcon = L.icon({
-//   iconUrl: iconConfig.url,
-//   iconSize: [iconConfig.width, iconConfig.height],
-//   iconAnchor: [iconConfig.anchorX, iconConfig.anchorY],
-// });
+const mainPinIcon = L.icon({
+  iconUrl: iconConfig.url,
+  iconSize: [iconConfig.width, iconConfig.height],
+  iconAnchor: [iconConfig.anchorX, iconConfig.anchorY],
+});
 
-// const mainPinMarker = L.marker(objectCoordinate, {
-//   icon: mainPinIcon,
-// });
+const mainPinMarker = L.marker(objectCoordinate, {
+  icon: mainPinIcon,
+});
 
-// mainPinMarker.addTo(map);
+mainPinMarker.addTo(map);
 
 siteList.classList.add('main-nav__list--closed');
 navBurger.classList.remove('main-nav__burger--active');
