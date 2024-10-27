@@ -72,13 +72,14 @@ function initSlider () {
 }
 
 function startTheControlShifting (event) {
+  event.preventDefault();
   controlPlaceStart = parseInt(sliderStyles.getPropertyValue('--left'), 10);
   clientX = event.type.includes('touch') ? event.touches[0].clientX : event.clientX;
-  window.addEventListener('pointermove', shiftТheСurtain);
-  window.addEventListener('touchmove', shiftТheСurtain);
+  window.addEventListener('pointermove', shiftТheСontrol);
+  window.addEventListener('touchmove', shiftТheСontrol);
 }
 
-function shiftТheСurtain (event) {
+function shiftТheСontrol (event) {
   const currentClientX = event.type.includes('touch') ? event.touches[0].clientX : event.clientX;
   const deltaX = currentClientX - clientX;
   const cursorPlace = controlPlaceStart / 100 + deltaX / slider.clientWidth;
@@ -88,8 +89,8 @@ function shiftТheСurtain (event) {
 }
 
 function stopTheControlShifting () {
-  window.removeEventListener('pointermove', shiftТheСurtain);
-  window.removeEventListener('touchmove', shiftТheСurtain);
+  window.removeEventListener('pointermove', shiftТheСontrol);
+  window.removeEventListener('touchmove', shiftТheСontrol);
 }
 
 initSlider();
