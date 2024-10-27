@@ -72,14 +72,18 @@ function initSlider () {
 }
 
 function startTheControlShifting (event) {
-  event.preventDefault();
   controlPlaceStart = parseInt(sliderStyles.getPropertyValue('--left'), 10);
   clientX = event.type.includes('touch') ? event.touches[0].clientX : event.clientX;
+
   window.addEventListener('pointermove', shiftТheСontrol);
-  window.addEventListener('touchmove', shiftТheСontrol);
+  window.addEventListener('touchmove', shiftТheСontrol, { passive: false });
 }
 
 function shiftТheСontrol (event) {
+  if (event.cancelable) {
+    event.preventDefault();
+  }
+
   const currentClientX = event.type.includes('touch') ? event.touches[0].clientX : event.clientX;
   const deltaX = currentClientX - clientX;
   const cursorPlace = controlPlaceStart / 100 + deltaX / slider.clientWidth;
